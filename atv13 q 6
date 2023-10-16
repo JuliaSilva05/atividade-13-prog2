@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Insira seu nome: \n");
+    char str[100];
+    fgets(str,100,stdin);
+    
+    printf("Insira seu sexo:\n");
+    char sexo[10];
+    scanf("%s",sexo);
+    
+    printf("Insira sua idade:\n");
+    int idade;
+    int sim;
+    scanf("%d",&idade);
+    if (sexo[0]=='F'||sexo[0]=='f'){
+        sim = 1;
+    }
+    if (sim==1&&idade<25){
+        printf("%s ACEITA",str);
+    } else{
+        printf("NÃO ACEITA");
+    }
+    
+    return 0;
+}
