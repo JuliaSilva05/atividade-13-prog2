@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Insira uma string: \n");
+    char str[100];
+    fgets(str,100,stdin);
+    int count = 0;
+    for (int i = 0; i < 100; i++){
+        if (str[i]!='\0'){
+            count = count + 1;
+        }
+    }
+    printf("O comprimento da string é %d\n",count);
+    return 0;
+}
