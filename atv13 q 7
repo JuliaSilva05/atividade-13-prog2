@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Insira uma string de numeros: \n");
+    char str[100];
+    fgets(str,100,stdin);
+    int count = 0;
+    int i;
+    for (i = 0; i < 100; i++){
+        if (str[i]=='1'){
+            count = count + 1;
+        }
+    }
+    
+    printf("O numero 1 apareceu %d vezes\n",count);
+    return 0;
+}
