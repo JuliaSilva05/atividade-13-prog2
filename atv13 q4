@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Insira um nome: \n");
+    char nome[100];
+    fgets(nome,100,stdin);
+    for (int i = 0; i < 100; i++){
+        if (i<4){
+            printf("%c",nome[i]);
+        }
+    }
+    
+    return 0;
+}
