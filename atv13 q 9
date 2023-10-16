@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Insira um nome: \n");
+    char str[100];
+    fgets(str,100,stdin);
+    
+    if (str[0]=='a'||str[0]=='A'){
+        printf("Nome: %s\n",str);
+    }
+    
+    return 0;
+}
