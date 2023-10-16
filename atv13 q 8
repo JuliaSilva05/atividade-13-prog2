@@ -6,7 +6,6 @@ int main()
     printf("Insira uma string de numeros: \n");
     char str[100];
     fgets(str,100,stdin);
-    int count = 0;
     int i;
     for (i = 0; i < 100; i++){
         if (str[i]=='0'){
