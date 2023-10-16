@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Insira uma string: \n");
+    char str[100];
+    fgets(str,100,stdin);
+    printf("String inserida: %s\n",str);
+
+    return 0;
+}
