@@ -1,0 +1,23 @@
+//questao 19
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int main()
+{
+    int idade = 1;
+    char nome[20];
+    int i = 0;
+    int j = 0;
+    
+    for (i=0;idade>-1;i++){
+        printf("Digite uma idade\n");
+        scanf("%d",&idade);
+        printf("Digite um nome:\n");
+        scanf("%s",nome);
+        
+    }
+
+    
+    return 0;
+}
