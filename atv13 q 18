@@ -1,23 +1,32 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-int main()
-{
-    printf("Digite uma string:\n");
-    char str[50], L1[1], L2[1];
-    fgets(str,50,stdin);
-    printf("Digite um caractere\n");
-    scanf("%s",&L1[0]);
-    printf("Digite outro caractere\n");
-    scanf("%s",&L2[0]);
-    int i = -1;
-    
-    for (i = -1; i < 50; i++){
-        if (str[i]!='\0' && str[i]==L1[0]){
-            str[i]=L2[0];
+
+void resultado(char str[], char L1, char L2) {
+    int i = 0;
+    while (str[i] != '\0') {
+        if (str[i] == L1) {
+            str[i] = L2;
         }
-        printf("%c",str[i]);
+        i++;
     }
-    
+}
+
+int main() {
+    printf("Digite uma string:\n");
+    char str[50];
+    fgets(str, 50, stdin);
+
+    printf("Digite um caractere para ser substituido:\n");
+    char L1;
+    scanf("%c", &L1);
+
+    printf("Digite um caractere para substituir o anterior:\n");
+    char L2;
+    scanf(" %c", &L2);
+
+    resultado(str, L1, L2);
+
+    printf("String modificada: \n%s", str);
+
     return 0;
 }
