@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int main()
+{
+    printf("Digite uma string:\n");
+    char str[50], L1[1], L2[1];
+    fgets(str,50,stdin);
+    printf("Digite um caractere\n");
+    scanf("%s",&L1[0]);
+    printf("Digite outro caractere\n");
+    scanf("%s",&L2[0]);
+    int i = -1;
+    
+    for (i = -1; i < 50; i++){
+        if (str[i]!='\0' && str[i]==L1[0]){
+            str[i]=L2[0];
+        }
+        printf("%c",str[i]);
+    }
+    
+    return 0;
+}
