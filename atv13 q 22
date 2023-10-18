@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main(void) {
+  printf("Insira o nome do produto\n");
+  char produto[50];
+  fgets(produto, 50, stdin);
+  printf("Insira o valor total\n");
+  int valor;
+  scanf("%d",&valor);
+  printf("\nNome da mercadoria: %s",produto);
+  printf("Valor total: %d\n",valor);
+  int desconto = valor/10; // desconto 10%, igual multiplicar por 10/100
+  int vista = valor - desconto;
+  printf("Valor do desconto: %d\n",desconto);
+  printf("Valor a vista: %d\n",vista);
+  return 0;
+}
