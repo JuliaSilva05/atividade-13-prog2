@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+  printf("Insira uma data no formato 'DD/MM/AAAA'\n");
+  char data[11];
+  fgets(data, 11, stdin);
+  // pegando o dia;
+  int dia = (data[0] - '0')*10 + data[1] - '0';
+  //pegando o mes;
+  int mes = (data[3] - '0')*10 + data[4] - '0';
+  //pegando o ano;
+  int ano = (data[6] - '0')*1000 + (data[7] - '0')*100 + (data[8] - '0')*10 + data[9] - '0';
+  
+  if (data[2]=='/' && data[5]=='/' && dia<32 && mes<13){
+    printf("Dia: %d \nMes: %d \nAno: %d",dia,mes,ano);
+  } else{
+    printf("Data invalida\n");
+  }
+    
+  return 0;
+}
