@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <string.h>
+//funcao para inverter as funcoes e assim tornar mais facil ver se uma esta no final da outra
+void * invert(char * str ){
+  int tamanho = strlen(str);
+  int c,i,j;
+  for (i = 0, j = tamanho - 1; i < j; i++, j--){
+      c = str[i];
+      str[i] = str[j];
+      str[j] = c;
+  }
+}
+
+int main(void) {
+  
+  char str1[50],str2[50];
+  
+  //pegando as strings
+  printf("Insira uma string:\n");
+  fgets(str1,50,stdin);
+  printf("Insira outra string\n");
+  fgets(str2,50,stdin);
+  
+  //invertendo as duas
+  invert(str1);
+  invert(str2);
+  
+  //tamanhos de str1 e str2
+  int tam1 = strlen(str1) - 1;
+  int tam2 = strlen(str2) - 1;
+
+  //resposta
+  int res = 0;
+  //numero de vezes a ser repetido
+  int n = tam1-tam2;
+  //garantindo que o numero de vezes a ser repetido seja positivo
+  if (tam1>=tam2){
+    //loop para verificar se str2 eh igual ao final de str1
+    for (int i = 0; i < tam2; i++){
+      if (str1[i] == str2[i]){
+        res = 1;
+      } else{
+        res = -1;
+      }
+    }
+    //resposta
+    if (res == 1){
+      printf("\nA segunda string está contida no final da primeira");
+    } else{
+      printf("\nA segunda string não está contida no final da primeira");
+    }
+    //caso str2 for maior que str1:
+  } else{
+    printf("\nA segunda string precisa ser maior que a primeira");
+  }
+
+  return 0;
+}
