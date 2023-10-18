@@ -51,7 +51,7 @@ int main(void) {
     }
     //caso str2 for maior que str1:
   } else{
-    printf("\nA segunda string precisa ser maior que a primeira");
+    printf("\nA primeira string precisa ser maior que a segunda");
   }
 
   return 0;
