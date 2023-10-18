@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void) {
+  char str[50];
+  int I=0,J=0;
+  
+  printf("Insira uma string:\n");
+  fgets(str,50,stdin);
+  
+  printf("Insira um inteiro não-negativo:\n");
+  scanf("%d",&I);
+  
+  printf("Insira outro inteiro não-negativo:\n");
+  scanf("%d",&J);
+
+  for (int i = I; i < J+1; i++){
+    if (I<J){
+      printf("%c",str[i]);
+    }  
+  }
+  
+  return 0;
+}
