@@ -1,0 +1,118 @@
+#include <stdio.h>
+#include <string.h>
+
+void resultado(char str[], char L1, char L2) {
+    int i = 0;
+    while (str[i] != '\0') {
+        if (str[i] == L1) {
+            str[i] = L2;
+        }
+        i++;
+    }
+}
+
+int main(void) {
+  
+  printf("Digite uma string\n");
+  char S1[20];
+  fgets(S1, 20, stdin);
+  printf("\nDigite 'I' para imprimir a string S1\n");
+  printf("Digite 'T' para imprimir o tamanho da string S1\n");
+  printf("Digite 'N' para colocar uma nova string S2 e compará-la com S1\n");
+  printf("Digite 'C' para concatenar uma nova string S2 e S1\n");
+  printf("Digite 'R' para imprimir S1 de maneira reversa\n");
+  printf("Digite 'Q' para imprimir a quantidade de vezes que um caractere C1 aparece em S1\n");
+  printf("Digite 'S' para substituir um caractere C1 por um caractere C2 em S1\n");
+  printf("Digite 'V' para verificar se S2 é substring de S2\n");
+  printf("Digite 'P' para fazer uma substring de S1, e depois digite uma posição e um tamanho\n");
+  char letra;
+  scanf("%c",&letra);
+  char c1,c2;
+
+  int tamanho;
+  int count = 0;
+  char C1[1],C2[1];
+  char S2[20];
+  char concat[40];
+  char subs[10];
+  int i = 0;
+  //imprimir
+  switch(letra){
+    case 'I':
+      printf("\nString S1: %s",S1);
+      break;
+    case 'T':
+      tamanho = strlen(S1);
+      printf("\nTamanho S1: %d",tamanho);
+    case 'N':
+      printf("\nDigite uma nova string S2\n");
+      scanf("%s",S2);
+      if (strlen(S1)-1==strlen(S2)){
+        printf("S1 e S2 são iguais");
+      } else{
+        printf("S1 e S2 são diferentes");
+      }
+      break;
+    case 'C':
+      printf("\nDigite uma nova string S2\n");
+      scanf("%s",S2);
+      strcat(S1,S2);
+      printf("String concatenada: \n%s",S1);
+      // nao consegui fazer ele imprimir um junto da outra, sem uma linha de diferenca
+    case 'R':
+      count = 0;
+      for (int i = 0; i < 100; i++){
+          if (S1[i]!='\0'){
+              count = count + 1;
+          }
+      }
+      for (int j = count; j>-1;j=j-1){
+          printf("%c",S1[j]);
+      }
+      break;
+    case 'Q':
+      printf("\nDigite um caractere C1\n");
+      scanf("%s",C1);
+      while (S1[i]!='\0'){
+        if (S1[i]==C1[0]){
+          count = count + 1;
+        }
+        i++;
+      }
+      printf("O caractere C1 aparece %d vezes",count);
+      break;
+    case 'S':
+      printf("\nDigite um caractere C1\n");
+      scanf("%s", &c1);
+      printf("\nDigite um caractere C2\n");
+      scanf(" %c", &c2);
+      resultado(S1, c1, c2);
+      printf("%s",S1);
+      break;
+    case 'V':
+      printf("\nDigite uma nova string S2\n");
+      scanf("%s",S2);
+      int len1 = strlen(S1) - 1;
+      int len2 = strlen(S2) - 1;
+      char *ret;
+      char *strstr(const char *S1, const char *S2);
+      ret = strstr(S1, S2);
+      if (ret==(NULL)){
+        printf("S2 não é substring de S1");
+      
+      } else{
+        printf("S2 é substring de S1");
+      }
+    case 'P':
+      printf("Digite a partir de qual posição deve ser criada a substring\n");
+      scanf("%d",&i);
+      printf("Digite o tamanho da substring\n");
+      scanf("%d",&tamanho);
+      for (int j = i; j<i+tamanho;j++){
+        subs[j] = S1[j];
+        printf("%c",subs[j]);
+      }
+      
+  return 0;
+}
+}
